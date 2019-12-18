@@ -1,0 +1,128 @@
+﻿@page
+@model MeetingPlanner.Pages.Meetings.EditModel
+
+@{
+    ViewData["Title"] = "Edit a Meeting";
+}
+
+<h2>Edit A Meeting</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Meeting.ID" />
+            <div class="form-group">
+                <label asp-for="Meeting.SpeechDate" class="control-label"></label>
+                <input asp-for="Meeting.SpeechDate" class="form-control" />
+                <span asp-validation-for="Meeting.SpeechDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Topic" class="control-label"></label>
+                <input asp-for="Meeting.Topic" class="form-control" />
+                <span asp-validation-for="Meeting.Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.ConductingLeader" class="control-label"></label>
+                <input asp-for="Meeting.ConductingLeader" class="form-control" />
+                <span asp-validation-for="Meeting.ConductingLeader" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.OpeningSong" class="control-label"></label>
+                <select asp-for="Meeting.OpeningSong" class="form-control">
+                    <option value="The Morning Breaks">The Morning Breaks</option>
+                    <option value="The Spirit of God">The Spirit of God</option>
+                    <option value="Now Let Us Rejoice">Now Let Us Rejoice</option>
+                    <option value="Truth Eternal">Truth Eternal</option>
+                    <option value="High On the Mountain Top">High On the Mountain Top</option>
+                    <option value="Redeemer of Israel">Redeemer of Israel</option>
+                    <option value="Israel, Israel, God Is Calling">Israel, Israel, God Is Calling</option>
+                    <option value="Awake and Arise">Awake and Arise</option>
+                    <option value="Come, Rejoice">Come, Rejoice</option>
+                    <option value="Come, Sing to the Lord">Come, Sing to the Lord</option>
+                </select>
+                <span asp-validation-for="Meeting.OpeningSong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.OpeningPrayer" class="control-label"></label>
+                <input asp-for="Meeting.OpeningPrayer" class="form-control" />
+                <span asp-validation-for="Meeting.OpeningPrayer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.SacramentSong" class="control-label"></label>
+                <select asp-for="Meeting.SacramentSong" class="form-control">
+                    <option value="The Morning Breaks">The Morning Breaks</option>
+                    <option value="The Spirit of God">The Spirit of God</option>
+                    <option value="Now Let Us Rejoice">Now Let Us Rejoice</option>
+                    <option value="Truth Eternal">Truth Eternal</option>
+                    <option value="High On the Mountain Top">High On the Mountain Top</option>
+                    <option value="Redeemer of Israel">Redeemer of Israel</option>
+                    <option value="Israel, Israel, God Is Calling">Israel, Israel, God Is Calling</option>
+                    <option value="Awake and Arise">Awake and Arise</option>
+                    <option value="Come, Rejoice">Come, Rejoice</option>
+                    <option value="Come, Sing to the Lord">Come, Sing to the Lord</option>
+                </select>
+                <span asp-validation-for="Meeting.SacramentSong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Speaker1" class="control-label"></label>
+                <input asp-for="Meeting.Speaker1" class="form-control" />
+                <span asp-validation-for="Meeting.Speaker1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Speaker2" class="control-label"></label>
+                <input asp-for="Meeting.Speaker2" class="form-control" />
+                <span asp-validation-for="Meeting.Speaker2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Speaker3" class="control-label"></label>
+                <input asp-for="Meeting.Speaker3" class="form-control" />
+                <span asp-validation-for="Meeting.Speaker3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Speaker4" class="control-label"></label>
+                <input asp-for="Meeting.Speaker4" class="form-control" />
+                <span asp-validation-for="Meeting.Speaker4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Speaker5" class="control-label"></label>
+                <input asp-for="Meeting.Speaker5" class="form-control" />
+                <span asp-validation-for="Meeting.Speaker5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.ClosingSong" class="control-label"></label>
+                <select asp-for="Meeting.ClosingSong" class="form-control">
+                    <option value="The Morning Breaks">The Morning Breaks</option>
+                    <option value="The Spirit of God">The Spirit of God</option>
+                    <option value="Now Let Us Rejoice">Now Let Us Rejoice</option>
+                    <option value="Truth Eternal">Truth Eternal</option>
+                    <option value="High On the Mountain Top">High On the Mountain Top</option>
+                    <option value="Redeemer of Israel">Redeemer of Israel</option>
+                    <option value="Israel, Israel, God Is Calling">Israel, Israel, God Is Calling</option>
+                    <option value="Awake and Arise">Awake and Arise</option>
+                    <option value="Come, Rejoice">Come, Rejoice</option>
+                    <option value="Come, Sing to the Lord">Come, Sing to the Lord</option>
+                </select>
+                <span asp-validation-for="Meeting.ClosingSong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.ClosingPrayer" class="control-label"></label>
+                <input asp-for="Meeting.ClosingPrayer" class="form-control" />
+                <span asp-validation-for="Meeting.ClosingPrayer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to Meetings</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,54 @@
+﻿@page
+@model MeetingPlanner.Pages.Meetings.IndexModel
+
+@{
+    ViewData["Title"] = "All Meetings";
+}
+
+<h2>All Meetings</h2>
+
+<form>
+    <p>
+        <select asp-for="MeetingTopic" asp-items="Model.Topics">
+            <option value="">All</option>
+        </select>
+        Speaker: <input type="text" asp-for="SearchString"/>
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-SortOrder="@Model.DateSort">
+                @Html.DisplayNameFor(model => model.Meeting[0].SpeechDate)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meeting[0].Topic)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Meeting) {
+        <tr>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID">  @Html.DisplayFor(modelItem => item.SpeechDate)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic)
+            </td>
+           
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-page="Create">Create a New Meeting</a>
+</p>
