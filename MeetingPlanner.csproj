@@ -5,6 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Speakers\Create.cshtml.cs" />
+    <Compile Remove="Pages\Speakers\Delete.cshtml.cs" />
+    <Compile Remove="Pages\Speakers\Edit.cshtml.cs" />
+    <Compile Remove="Pages\Topics\Create.cshtml.cs" />
+    <Compile Remove="Pages\Topics\Delete.cshtml.cs" />
+    <Compile Remove="Pages\Topics\Edit.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Speakers\Create.cshtml" />
+    <Content Remove="Pages\Speakers\Delete.cshtml" />
+    <Content Remove="Pages\Speakers\Edit.cshtml" />
+    <Content Remove="Pages\Topics\Create.cshtml" />
+    <Content Remove="Pages\Topics\Delete.cshtml" />
+    <Content Remove="Pages\Topics\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />

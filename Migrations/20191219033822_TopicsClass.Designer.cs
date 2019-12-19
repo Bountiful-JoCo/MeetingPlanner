@@ -4,14 +4,16 @@ using MeetingPlanner.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MeetingPlanner.Migrations
 {
     [DbContext(typeof(MeetingPlannerContext))]
-    partial class MeetingPlannerContextModelSnapshot : ModelSnapshot
+    [Migration("20191219033822_TopicsClass")]
+    partial class TopicsClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,37 +66,16 @@ namespace MeetingPlanner.Migrations
                     b.Property<string>("Speaker5")
                         .HasMaxLength(120);
 
-                    b.Property<int?>("SpeakerID");
-
                     b.Property<DateTime>("SpeechDate");
 
                     b.Property<string>("Topic")
                         .IsRequired();
 
-                    b.Property<int?>("TopicID");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("SpeakerID");
-
-                    b.HasIndex("TopicID");
 
                     b.ToTable("Meeting");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Meeting");
-                });
-
-            modelBuilder.Entity("MeetingPlanner.Models.Speaker", b =>
-                {
-                    b.HasBaseType("MeetingPlanner.Models.Meeting");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.ToTable("Speaker");
-
-                    b.HasDiscriminator().HasValue("Speaker");
                 });
 
             modelBuilder.Entity("MeetingPlanner.Models.Topic", b =>
@@ -108,17 +89,6 @@ namespace MeetingPlanner.Migrations
                     b.ToTable("Topic");
 
                     b.HasDiscriminator().HasValue("Topic");
-                });
-
-            modelBuilder.Entity("MeetingPlanner.Models.Meeting", b =>
-                {
-                    b.HasOne("MeetingPlanner.Models.Speaker")
-                        .WithMany("Meetings")
-                        .HasForeignKey("SpeakerID");
-
-                    b.HasOne("MeetingPlanner.Models.Topic")
-                        .WithMany("Meetings")
-                        .HasForeignKey("TopicID");
                 });
 #pragma warning restore 612, 618
         }

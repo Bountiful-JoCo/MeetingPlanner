@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MeetingPlanner.Models;
 
 namespace MeetingPlanner.Models
 {
@@ -14,5 +15,9 @@ namespace MeetingPlanner.Models
         }
 
         public DbSet<MeetingPlanner.Models.Meeting> Meeting { get; set; }
+
+        public DbSet<MeetingPlanner.Models.Topic> Topic { get; set; }
+
+        public DbSet<MeetingPlanner.Models.Speaker> Speaker { get; set; }
     }
 }

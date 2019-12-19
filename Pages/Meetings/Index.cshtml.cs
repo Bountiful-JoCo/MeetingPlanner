@@ -28,7 +28,9 @@ namespace MeetingPlanner.Pages.Meetings
         public string DateSort { get; set; }
         public string SortOrder { get; set; }
 
-        public async Task OnGetAsync(string SearchString, string SortOrder)
+        public async Task OnGetAsync(string SearchString, string SortOrder
+            
+            )
         {
             IQueryable<string> topicQuery = from t in _context.Meeting
                                             orderby t.SpeechDate

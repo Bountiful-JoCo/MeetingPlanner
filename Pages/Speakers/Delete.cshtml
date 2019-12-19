@@ -1,0 +1,100 @@
+﻿@page
+@model MeetingPlanner.Pages.Speakers.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Speaker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.SpeechDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.SpeechDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.Topic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.Topic)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.ConductingLeader)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.ConductingLeader)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.OpeningSong)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.OpeningSong)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.OpeningPrayer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.OpeningPrayer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.SacramentSong)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.SacramentSong)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.Speaker1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.Speaker1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.Speaker2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.Speaker2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.Speaker3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.Speaker3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.Speaker4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.Speaker4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.Speaker5)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.Speaker5)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.ClosingSong)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.ClosingSong)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker.ClosingPrayer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speaker.ClosingPrayer)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Speaker.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
