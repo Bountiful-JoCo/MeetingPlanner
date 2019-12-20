@@ -24,7 +24,8 @@ namespace MeetingPlanner.Pages.Topics
         public string SortOrder { get; set; }
         [BindProperty(SupportsGet = true)]
         public string MeetingTopic { get; set; }
-        public async Task OnGetAsync()
+
+        public async Task OnGetAsync(string SortOrder)
         {
             var meetings = from m in _context.Meeting
                            select m;
@@ -43,7 +44,7 @@ namespace MeetingPlanner.Pages.Topics
             }
 
 
-            Topic = await _context.Topic.AsNoTracking().ToListAsync();
+           // Topic = await _context.Topic.ToListAsync();
             Meeting = await meetings.AsNoTracking().ToListAsync();
         }
     }

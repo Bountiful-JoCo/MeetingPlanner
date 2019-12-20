@@ -18,12 +18,34 @@ namespace MeetingPlanner.Pages.Speakers
             _context = context;
         }
 
-        public IList<Speaker> Speaker { get;set; }
+        public IList<Speaker> Speaker { get; set; }
         public IList<Meeting> Meeting { get; set; }
+        public string DateSort { get; set; }
+        public string SortOrder { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string MeetingTopic { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string SortOrder)
         {
-            Speaker = await _context.Speaker.ToListAsync();
+            var meetings = from m in _context.Meeting
+                           select m;
+
+            DateSort = SortOrder == "Date" ? "date_desc" : "Date";
+            switch (SortOrder)
+            {
+
+                case "Date":
+                    meetings = meetings.OrderBy(sc => sc.SpeechDate);
+                    break;
+                case "date_desc":
+                    meetings = meetings.OrderByDescending(sc => sc.SpeechDate);
+                    break;
+
+            }
+
+
+            // Topic = await _context.Topic.ToListAsync();
+            Meeting = await meetings.AsNoTracking().ToListAsync();
         }
     }
 }

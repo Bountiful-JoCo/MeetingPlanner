@@ -1,5 +1,5 @@
 ﻿@page
-@model MeetingPlanner.Pages.Topics.IndexModel
+@model MeetingPlanner.Pages.Meetings.IndexModel
 
 @{
     ViewData["Title"] = "All Topics";
@@ -14,11 +14,11 @@
            
             <th>
                 <a asp-page="./Index" asp-route-SortOrder="@Model.DateSort">
-                    @Html.DisplayNameFor(model => model.Topic[0].SpeechDate)
+                    @Html.DisplayNameFor(model => model.Meeting[0].SpeechDate)
                 </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Topic[0].Topic)
+                @Html.DisplayNameFor(model => model.Meeting[0].Topic)
             </th>
            
             <th></th>
@@ -29,7 +29,7 @@
         <tr>
             
             <td>
-                <a asp-page="./Details" asp-route-id="@item.ID"> @Html.DisplayFor(modelItem => item.SpeechDate)</a>
+                <a asp-page="/Meetings/Details" asp-route-id="@item.ID"> @Html.DisplayFor(modelItem => item.SpeechDate)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Topic)
